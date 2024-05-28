@@ -1,0 +1,30 @@
+﻿<Page x:Class="Practice.Pages.FloristPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practice.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FloristPage">
+
+    <Grid Style="{StaticResource BackgroundG}"  >
+        <Image Source="D:\jobs\Practice2\Practice\Icon\logo.png" Width="30" HorizontalAlignment="Left" Margin="15,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="ООО 'ЦВЕТОЧЕК'" Margin="40,5,0,0" Width="110" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Width="60" Height="30" Background="White" VerticalAlignment="Top" Content="Добавить" Margin="0,5,150,0" Click="Add_Click" HorizontalAlignment="Center"/>
+        <Button Width="90" Height="30" Background="White" VerticalAlignment="Top" Content="Редактировать" Margin="150,5,0,0" Click="Edit_Click" HorizontalAlignment="Center"/>
+        <ListView Margin="0,50,0,0" ItemsSource="{Binding ListFlorist}" x:Name="dataGrid" SelectionChanged="dataGrid_SelectionChanged" SizeChanged="ListView_SizeChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Фамилия"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="Имя"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic}" Header="Отчество"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ShopName}" Header="Магазин работы"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Username}" Header="Логин"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Password}" Header="Пароль"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>
